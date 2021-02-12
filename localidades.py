@@ -1,34 +1,34 @@
-import localidad
-import coleccion
+from localidad import Localidad
+from coleccion import Coleccion
 
 VESTIBULO = 0
 MITAD_PASILLO = 1
 COCINA = 2
 BIBLIOTECA = 3
 
-_localidades = coleccion.coleccion()
+_localidades = Coleccion()
 
 datos_localidad = {
-    VESTIBULO: localidad.localidad(
+    VESTIBULO: Localidad.localidad(
         'VESTÍBULO',
         'Estás en el vestíbulo del castillo.'
     ),
-    MITAD_PASILLO: localidad.localidad(
+    MITAD_PASILLO: Localidad.localidad(
         'Estás en mitad del pasillo.',
         'MITAD PASILLO'
     ),
-    COCINA: localidad.localidad(
+    COCINA: Localidad.localidad(
         'Estás en la cocina.',
         'COCINA'
     ),
-    BIBLIOTECA: localidad.localidad(
+    BIBLIOTECA: Localidad.localidad(
         'Estás en la biblioteca.',
         'BIBLIOTECA'
     )
 }
 
 for clave, loc in datos_localidad.items():
-    coleccion.insertar(_localidades, clave, loc)
+    Coleccion.insertar(_localidades, clave, loc)
 
 """
 Cocina --- Mitad pasillo --- Biblioteca
@@ -63,4 +63,4 @@ def localidad(k):
 
     Lanza una excepción KeyError si la localidad con clave k no existe.
     """
-    return coleccion.elemento(_localidades, k)
+    return Coleccion.elemento(_localidades, k)
