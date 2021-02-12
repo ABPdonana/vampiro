@@ -1,18 +1,3 @@
-"""
-TAD Coleccion: colección de elementos a los que se puede acceder
-               a través de un identificador o etiqueta.
-
-- Generadora:
-    - coleccion() -> Coleccion
-
-- Selectora:
-    - elemento(c: Coleccion, k: Clave) -> Elemento
-
-- Mutadoras:
-    - insertar(c: Coleccion, k: Clave, e: Elemento)
-    - quitar(c: Coleccion, k: Clave)
-"""
-
 class Coleccion:
     def __init__(self):
         """Inicializa la colección."""
